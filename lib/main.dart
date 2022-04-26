@@ -1,17 +1,14 @@
-// Copyright 2019 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
 
+import 'package:app_ordering/models/cart_model.dart';
+import 'package:app_ordering/models/catalog_model.dart';
+import 'package:app_ordering/screens/cart.dart';
+import 'package:app_ordering/screens/catalog.dart';
+import 'package:app_ordering/screens/home.dart';
+import 'package:app_ordering/screens/notification.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_shopper/common/theme.dart';
-import 'package:provider_shopper/models/cart.dart';
-import 'package:provider_shopper/models/catalog.dart';
-import 'package:provider_shopper/screens/cart.dart';
-import 'package:provider_shopper/screens/catalog.dart';
-import 'package:provider_shopper/screens/login.dart';
-import 'package:provider_shopper/screens/detail.dart';
-import 'package:provider_shopper/screens/notification.dart';
+import 'package:app_ordering/common/theme.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -48,7 +45,6 @@ class MyApp extends StatelessWidget {
           '/': (context) => const MyLogin(),
           '/catalog': (context) => const MyCatalog(),
           '/cart': (context) => const MyCart(),
-          '/detail':(context) => const DetailScreen(),
           '/notification': (context) => const MyNotification()
         },
       ),

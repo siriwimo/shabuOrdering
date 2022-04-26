@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:app_ordering/models/cart_model.dart';
+import 'package:app_ordering/models/catalog_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_shopper/models/cart.dart';
-import 'package:provider_shopper/models/catalog.dart';
 
 
 class MyCatalog extends StatelessWidget {
@@ -20,7 +20,8 @@ class MyCatalog extends StatelessWidget {
           const SliverToBoxAdapter(child: SizedBox(height: 12)),
           SliverList(
             delegate: SliverChildBuilderDelegate(
-                (context, index) => _MyListItem(index)),
+                (context, index) => _MyListItem(index),
+                childCount: CatalogModel.itemNames.length),
                 ),
         ],
       ),
@@ -29,7 +30,6 @@ class MyCatalog extends StatelessWidget {
 }
 
 class _AddButton extends StatelessWidget {
-  
   final Item item;
 
   const _AddButton({required this.item, Key? key}) : super(key: key);
@@ -77,7 +77,7 @@ class _MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      title: Text('Menu List', style: Theme.of(context).textTheme.headline1),
+      title: Text('Menu', style: Theme.of(context).textTheme.headline1),
       floating: true,
       actions: [
         IconButton(
@@ -122,11 +122,7 @@ class _MyListItem extends StatelessWidget {
               child: Text(item.name, style: textTheme),
             ),
             const SizedBox(width: 24),
-            IconButton(
-            icon: const Icon(Icons.arrow_drop_down_circle_rounded),
-            onPressed: () => Navigator.pushNamed(context, '/detail'),
-             ),
-            _AddButton(item: item)
+            _AddButton(item: item),
           ],
         ),
       ),
