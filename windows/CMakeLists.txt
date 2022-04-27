@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(app_ordering LANGUAGES CXX)
+project(provider_shopper LANGUAGES CXX)
 
-set(BINARY_NAME "app_ordering")
+set(BINARY_NAME "provider_shopper")
 
 cmake_policy(SET CMP0063 NEW)
 

@@ -1,4 +1,9 @@
+
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+// import 'package:provider_shopper/models/notification.dart';
 
 class MyNotification extends StatelessWidget {
   const MyNotification({Key? key}) : super(key: key);
@@ -16,12 +21,12 @@ class MyNotification extends StatelessWidget {
         children: [
           Padding(
             
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: SizedBox(
+          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+          child: Container(
             height: 48,
             child: Row(
               children: [
-                const Icon(Icons.sticky_note_2_outlined),
+                Icon(Icons.sticky_note_2_outlined),
                 const SizedBox(width: 24),
                 Expanded(
                   child: Text('all menu served', style: textTheme),
@@ -35,7 +40,6 @@ class MyNotification extends StatelessWidget {
       )
       
     );
-  }
-
-  
+  }  
 }
+

@@ -2,11 +2,11 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:app_ordering/models/cart_model.dart';
-import 'package:app_ordering/models/catalog_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import 'package:provider_shopper/models/cart.dart';
+import 'package:provider_shopper/models/catalog.dart';
+// import 'package:provider_shopper/models/notification.dart';
 
 class MyCatalog extends StatelessWidget {
   const MyCatalog({Key? key}) : super(key: key);
@@ -80,6 +80,10 @@ class _MyAppBar extends StatelessWidget {
       title: Text('Menu', style: Theme.of(context).textTheme.headline1),
       floating: true,
       actions: [
+        IconButton(
+          icon: const Icon(Icons.search),
+          onPressed: () => Navigator.pushNamed(context, '/search'),
+        ),
         IconButton(
           icon: const Icon(Icons.shopping_cart),
           onPressed: () => Navigator.pushNamed(context, '/cart'),
